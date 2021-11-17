@@ -39,12 +39,16 @@ class special_numbers:
             sentence = sentence.replace("-", "خط تیره")
         floating_points = re.findall('[۰-۹]+\.[۰-۹]+', sentence)
         for floating_point in floating_points:
+            floating_point_new = ""
             natural_number = floating_point.split(".")[0]
             exp_number = floating_point.split(".")[1]
-            if len(exp_number) > 4:
+            if len(exp_number) > 4 or len(natural_number) > 10:
                 exp_number = exp_number[:4]
+                natural_number = natural_number[:10]
                 floating_point_new = f"{natural_number}.{exp_number}"
-            floating_point_new = words(str(floating_point_new), decimal_separator=' ممیز ')
+                floating_point_new = words(str(floating_point_new), decimal_separator=' ممیز ')
+            else:
+                floating_point_new = words(str(floating_point), decimal_separator=' ممیز ')
             sentence = sentence.replace(str(floating_point), floating_point_new)
         numbers = re.findall('[۰-۹]+', sentence)
         for index in range(len(numbers)):

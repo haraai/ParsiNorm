@@ -41,13 +41,6 @@ class TTS_normalization:
         self.sadi = {'GH₵': ' سدی غنا '}
         self.naira = {'₦': ' نایرا نیجریه '}
         self.dinar = {'ден': ' دینار مقدونیه '}
-        self.percent = {'%': ' درصد '}
-        self.degree = {'°': ' درجه '}
-        self.star = {'*': ' ستاره '}
-        self.square = {'#': ' مربع '}
-        self.add = {'+': ' پلاس '}
-        self.delta = {'&': ' and '}
-        self.And = {'&': ' Δ '}
 
         self.currency_replaces = [
             self.dollar,
@@ -76,6 +69,16 @@ class TTS_normalization:
             self.sadi,
             self.naira,
             self.dinar,
+        ]
+        self.percent = {'%': ' درصد '}
+        self.degree = {'°': ' درجه '}
+        self.star = {'*': ' ستاره '}
+        self.square = {'#': ' مربع '}
+        self.add = {'+': ' پلاس '}
+        self.And = {'&': ' and '}
+        self.delta = {'Δ': ' delta '}
+
+        self.symbols = [
             self.percent,
             self.degree,
             self.star,
@@ -95,3 +98,8 @@ class TTS_normalization:
                               lambda m: currency_replace[m.group()], sentence)
         return sentence
 
+    def replace_symbols(self, sentence):
+        for symbol in self.symbols:
+            sentence = re.sub('({})'.format('|'.join(map(re.escape, symbol.keys()))),
+                              lambda m: symbol[m.group()], sentence)
+        return sentence

@@ -10,7 +10,8 @@ class general_normalization:
 
     def __init__(self):
         self.persian_erab = {'ٰ': '', 'ً': '', 'ٌ': '', 'ٍ': '', 'َ': '', 'ُ': '', 'ِ': '', 'ّ': '', 'ْ': '', 'ٓ': '',
-                             'ٔ': '', 'ٖ': '', 'ؕ': '', 'ٕ': '', 'ٙ': '', 'ٴ': '', '̒': '', '́': '', 'ـ': ''}
+                             'ٔ': '', 'ٖ': '', 'ؕ': '', 'ٕ': '', 'ٙ': '', 'ٴ': '', '̒': '', '́': ''}
+        self.keshide = {'ـ': ''}
 
         self.persian_A = {'ﺁ': 'آ', 'ﺂ': 'آ'}
 
@@ -106,6 +107,7 @@ class general_normalization:
 
         self.persian_alphabet_replaces = [
             # self.persian_erab,
+            self.keshide,
             self.persian_A,
             self.persian_a,
             self.persian_b,
