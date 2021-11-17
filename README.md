@@ -1,121 +1,34 @@
 <div dir='ltr' align='left'>
 
-# pre-processing
+# PerSpeechNormalization
+The normalization step is so essential to format unification in pure textual applications. However, for embedded language models in speech processing modules, normalization is not limited to format unification. Moreover, it has to convert each readable symbol, number, etc., to how they are pronounced. 
 
+<h1>functionalities</h1>
 
-<h1>Use total functions in predifiened order:</h1>
+<h3> General Normalization</h3>
 
-The file clean.py has all functions in order.
-To use this function you have to make an instance from clean and then call clean_sentence method:
-	
-	from clean import clean
-	sentence = clean.clean_sentence(sentence)
++ Sentence tokenizer
++ Normalizing persian and English characters 
++ Normalizing Numbers (Converting to unique perisan Number)
++ Converting Persian, English, Arabic symbols to normalized characters
++ Normalize Punctuations
++ Removing emojis
++ Converting HTML tags to characters and symbols
++ Having unique floating point number
++ Removing different comma between numbers
++ Removing repeated punctuations
 
-If you want to seperate sentences you have to make an instance of tokenizer class and then call sentence_tokenize function
+<h3> Speech Normalization</h3>
 
-	from Tokenizer import Tokenizer
-	sentences = tokenizer.sentence_tokenize(sentences)
-All in one, you can use following codes to have a preprocessing for speech processing:
++ Converting mail and url to how are pronounced
++ Converting Date and Times to how they are pronounced
++ Converting special numbers to how they are pronounced
++ Converting English and Persian Abbrevations to how they are pronounced
++ converting telephone numbers to how they are pronounced in Persian
++ Converting currency to how they are read
++ Converting some symbols to how they are read such as %, °, *, #, +, &, Δ
 
-	for index in range(len(sentences)):
-        	for sentence in tokenizer.sentence_tokenize(sentences[index]):
-                sentence = clean.clean_sentence(sentence)
-		# Do every thing you want with each seprated sentence
-	
-<h1>Use Functions seperately:</h1>
-Detect and clean URLs and emails this cleaning is by replacing symbols to how they are spelled:
-
-
-	from mail_url_cleaner import mail_url_cleaner
-	mail_url_cleaner = mail_url_cleaner()
-	sentence = mail_url_cleaner.find_mails_clean(sentence=sentence)
-	sentence = mail_url_cleaner.find_urls_clean(sentence=sentence)
-
-Detect and covert time and dates to how they are spelled
-
-
-	from date_time_to_text import date_time_to_text
-	date_time_to_text = date_time_to_text()
-	sentence = date_time_to_text.date_to_text(sentence=sentence)
-	sentence = date_time_to_text.time_to_text(sentence=sentence)
-
-
-Replace different forms of Persian and English to unique forms 
-
-	from general_normalization import general_normalization
-	general_normalization = general_normalization()
-	sentence = general_normalization.alphabet_correction(sentence=sentence)
-	sentence = general_normalization.english_correction(sentence=sentence)
-
-General text normalization is used by following codes
-
-	from general_normalization import general_normalization
-	general_normalization = general_normalization()
-	# To replace HTML tags with their character symbols
-	sentence = general_normalization.html_correction(sentence=sentence)
-	# To replace arabic symbols with how they are written completely
-	sentence = general_normalization.arabic_correction(sentence=sentence)
-	# To have a unique form of each puncuations
-	sentence = general_normalization.punctuation_correction(sentence=sentence)
-	# To replace special English symbols and characters to how they are written completely
-	sentence = general_normalization.specials_chars(sentence=sentence)
-	# Remove emojis
-	sentence = general_normalization.remove_emojis(sentence=sentence)
-	# Unique floating point with these seperators: (/,،)
-	sentence = general_normalization.unique_floating_point(sentence=sentence)
-	# Remove comma between numbers that are used to read numbers easily
-	sentence = general_normalization.remove_comma_between_numbers(sentence=sentence)
-	# Convert numbers to a unique Persian unicode
-	sentence = general_normalization.number_correction(sentence=sentence)
-	# Remove characters and symbols that are not in list of acceptable characters
-	sentence = general_normalization.remove_not_desired_chars(sentence=sentence)
-	# Remove punctuations that are repeated except for dot(.)
-	sentence = general_normalization.remove_repeated_punctuation(sentence=sentence)
-
-Detect and replace telephone numbers with how they are pronounced
-
-	from telephone_number import telephone_number
-	telephone_number = telephone_number()
-	sentence = telephone_number.find_phones_replace(sentence=sentence)
-
-Detect and Replace English and Persian abbrevation with how they are read
-
-	from abbreviation import abbreviation
-	abbreviation = abbreviation()
-	sentence = abbreviation.replace_date_abbreviation(sentence=sentence)
-	sentence = abbreviation.replace_persian_label_abbreviation(sentence=sentence)
-	sentence = abbreviation.replace_law_abbreviation(sentence=sentence)
-	sentence = abbreviation.replace_book_abbreviation(sentence=sentence)
-	sentence = abbreviation.replace_other_abbreviation(sentence=sentence)
-	sentence = abbreviation.replace_English_abbrevations(sentence=sentence)
-
-Speech processing normalization. This class replace non standard characters and symbols to how they are spelled
-	
-	from TTS_normalization import TTS_normalization
-	TTS_normalization = TTS_normalization()
-	sentence = TTS_normalization.math_correction(sentence=sentence)
-	sentence = TTS_normalization.replace_currency(sentence=sentence)
-
-Replace numbers and special numbers such as floating points, national code, card number, sheba to how they are read 
-
-	from special_numbers import special_numbers
-	special_numbers = special_numbers()
-	sentence = special_numbers.convert_numbers_to_text(sentence=sentence)
-	sentence = special_numbers.replace_national_code(sentence=sentence)
-	sentence = special_numbers.replace_card_number(sentence=sentence)
-	sentence = special_numbers.replace_shaba(sentence=sentence)
-
-Remove unnecessary sentences
-
-	from data_cleaning import data_cleaning
-	data_cleaning = data_cleaning()
-	sentence = data_cleaning.remove_just_url(sentence=sentence)
-	sentence, isEnglish = data_cleaning.remove_english_sentence(sentence=sentence)
-	sentence = data_cleaning.remove_html_tags(sentence=sentence)
-	sentence = self.data_cleaning.remove_article_code(sentence=sentence)
-
-
-<h1>Examples</h1>
+<h1>Usage</h1>
 
 ```python
 >>> from mail_url_cleaner import mail_url_cleaner
@@ -205,6 +118,9 @@ TEL
 >>> TTS_normalization.replace_currency(sentence='۳۳$')
 ۳۳ دلار
 
+>>> TTS_normalization.replace_symbols(sentence='۳۳°')
+۳۳ درجه 
+
 >>> from special_numbers import special_numbers
 >>> special_numbers = special_numbers()
 >>> special_numbers.convert_numbers_to_text(sentence='122')
@@ -226,10 +142,24 @@ TEL
 
 ```
 
-<h1>To Do:</h1>
-<ul>
-  <li>Slash "/" in different contexts </li>
-  <li>"+" in different contexts </li>
-</ul>  
+
+<h1> Reference </h1>
+
+If you use or discuss this normalization tool in your work, please cite our paper :
+
+```
+@article{oji2021perspeechnorm,
+  title={PerSpeechNorm: A Persian Toolkit for Speech Processing Normalization},
+  author={Oji, Romina and Razavi, Seyedeh Fatemeh and Dehsorkh, Sajjad Abdi and Hariri, Alireza and Asheri, Hadi and Hosseini, Reshad},
+  journal={arXiv preprint arXiv:2111.03470},
+  year={2021}
+}
+```
+
+<h1> Contact </h1>
+
+If you have any technical question regarding the dataset or publication, please
+create an issue in this repository.
+
 
 </div>

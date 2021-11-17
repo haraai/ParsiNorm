@@ -1,9 +1,11 @@
 import re
+from hazm import POSTagger, Normalizer, word_tokenize
 
 
 class Tokenizer:
     def __init__(self):
         self.pattern_abbreviation = r"\b[آ-ی](?=([.]))(?:\1[آ-ی])*\b"
+        self.tagger = POSTagger(model="Resources/postagger.model")
 
     def remove_dot_in_abbrevations(self, sentence):
         abbrevations = [x.group() for x in re.finditer(self.pattern_abbreviation, sentence)]
@@ -67,3 +69,24 @@ class Tokenizer:
         sentence = sentence.split('\t\t')
         sentence = [x for x in sentence if len(x) > 0]
         return sentence
+
+    def VerbSeperator(self, line):
+        line = str(line)
+        sentences = []
+        tagged = self.tagger.tag(word_tokenize(line))
+
+        flag_has_verb = True
+        for i, word in enumerate(word_tokenize(line)):
+            if tagged[i][1] == 'V':
+                flag_has_verb = False
+        if flag_has_verb:
+            sentences.append(line)
+            return sentences
+
+        temp = ''
+        for i, word in enumerate(word_tokenize(line)):
+            temp = temp + ' ' + word
+            if tagged[i][1] == 'V':
+                sentences.append(temp)
+                temp = ''
+        return sentences
