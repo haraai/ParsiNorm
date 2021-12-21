@@ -659,7 +659,9 @@ class general_normalization:
         return sentence
 
     def semi_space_correction(self, sentence):
-        sentence = sentence.translate(str.maketrans(self.semi_space))
+        sentence = re.sub('({})'.format('|'.join(map(re.escape, self.semi_space.keys()))),
+                          lambda m: self.semi_space[m.group()],
+                          sentence)
         return sentence
 
     def punctuation_correction(self, sentence):
