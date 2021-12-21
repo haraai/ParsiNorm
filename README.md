@@ -52,6 +52,9 @@ https do noghte slash slash hara dot ai
 >>> general_normalization.alphabet_correction(sentence='ﻙﯘݙݤﮮ')
 کودکی
 
+>>>general_normalization.semi_space_correction(sentence='کتاب\u200bخانه')
+کتابخانه
+
 >>> general_normalization.english_correction(sentence='naïve')
 naive
 
