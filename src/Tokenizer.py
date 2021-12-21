@@ -5,7 +5,7 @@ from hazm import POSTagger, Normalizer, word_tokenize
 class Tokenizer:
     def __init__(self):
         self.pattern_abbreviation = r"\b[آ-ی](?=([.]))(?:\1[آ-ی])*\b"
-        self.tagger = POSTagger(model="/../data/postagger.model")
+        self.tagger = POSTagger(model="resources/postagger.model")
 
     def remove_dot_in_abbrevations(self, sentence):
         abbrevations = [x.group() for x in re.finditer(self.pattern_abbreviation, sentence)]
