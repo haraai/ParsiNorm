@@ -17,6 +17,7 @@ The normalization step is so essential to format unification in pure textual app
 + Having unique floating point number
 + Removing different comma between numbers
 + Removing repeated punctuations
++ convert semi sapce to null
 
 <h3> Speech Normalization</h3>
 
