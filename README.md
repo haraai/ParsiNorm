@@ -1,6 +1,6 @@
 <div dir='ltr' align='left'>
 
-# PerSpeechNormalization
+# ParsiNorm
 The normalization step is so essential to format unification in pure textual applications. However, for embedded language models in speech processing modules, normalization is not limited to format unification. Moreover, it has to convert each readable symbol, number, etc., to how they are pronounced. 
 
 <h1>functionalities</h1>
