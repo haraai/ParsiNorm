@@ -75,8 +75,8 @@ class TTS_normalization:
         self.star = {'*': ' ستاره '}
         self.square = {'#': ' مربع '}
         self.add = {'+': ' پلاس '}
-        self.And = {'&': ' and '}
-        self.delta = {'Δ': ' delta '}
+        self.And = {'&': ' اند '}
+        self.delta = {'Δ': ' دلتا '}
 
         self.symbols = [
             self.percent,
