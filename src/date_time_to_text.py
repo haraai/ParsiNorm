@@ -52,6 +52,21 @@ class date_time_to_text:
             "12": "ذیحجه",
         }
 
+        self.miladi_month_names = {
+            "January": "ژانویه",
+            "February": "فوریه",
+            "March": "مارس",
+            "April": "آوریل",
+            "May": "می",
+            "June": "ژوئن",
+            "July": "جولای",
+            "August": "اوت",
+            "September": "سپتامبر",
+            "October": "اکتبر",
+            "November": "نوامبر",
+            "December": "دسامبر",
+        }
+
         self.number_replaces = {
             "۰": ['0', '٠', '𝟢', '𝟬'],
             "۱": ['1', '١', '𝟣', '𝟭', '⑴', '⒈', '⓵', '①', '❶', '𝟙', '𝟷', 'ı', '¹'],
@@ -362,3 +377,9 @@ class date_time_to_text:
                 sentence = sentence.replace(match, self.define_template_type(date_type, year, month, day))
 
         return self.number_correction(sentence)
+
+    def convert_miladi_month(self, sentence):
+        for miladi_month_name in self.miladi_month_names:
+            sentence = re.sub('({})'.format('|'.join(map(re.escape, miladi_month_name.keys()))),
+                              lambda m: miladi_month_name[m.group()], sentence)
+        return sentence
