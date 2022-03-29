@@ -16,8 +16,8 @@ class abbreviation:
         self.ghamari_date_type5 = {'ه. ق.': 'هجری قمری'}
         self.ghable_milad_date_type1 = {'ق.م': 'قبل از میلاد'}
         self.ghable_milad_date_type2 = {'ق.م.': 'قبل از میلاد'}
-        self.milad_date = {'م. ': ' میلادی'}
-        self.ghamari_date = {'ق. ': ' قمری'}
+        self.milad_date = {' م. ': ' میلادی'}
+        self.ghamari_date = {' ق. ': ' قمری'}
 
         self.date_replaces = [
             self.persian_date_type1,

@@ -49,6 +49,11 @@ class special_numbers:
                 floating_point_new = words(str(floating_point_new), decimal_separator=' ممیز ')
             else:
                 floating_point_new = words(str(floating_point), decimal_separator=' ممیز ')
+            zero = re.findall('^[0|۰]*[0|۰]$', exp_number)
+            if zero:
+                sentence = sentence.replace(str(floating_point), self.convert_number_to_letter(natural_number))
+
+            # if exp_number == 0 or exp_number
             sentence = sentence.replace(str(floating_point), floating_point_new)
         numbers = re.findall('[۰-۹]+', sentence)
         for index in range(len(numbers)):
