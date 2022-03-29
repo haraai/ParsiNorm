@@ -141,8 +141,39 @@ TEL
 
 >>> from Tokenizer import Tokenizer
 >>> tokenizer = Tokenizer()
->>> tokenizer.sentence_tokenize('.این در مورد پروژه است. باید جداسازی انجام گیرد. درست است') 
-['این در مورد پروژه است .', ' باید جداسازی انجام گیرد .', ' درست است .']
+>>> tokenizer.sentence_tokenize('این مثالی است که در آن یک جمله فقط بر اساس علائم نگارشی جدا می‌شود.',verb_seperator= False)
+['این مثالی است که در آن یک جمله فقط بر اساس علائم نگارشی جدا میشود .']
+
+>>> tokenizer.sentence_tokenize('این مثالی است که در آن یک جمله با فعل تمام شده‌است ولی با نقطه تمام نشده‌است به همین دلیل آن را بر اساس فعل جدا می‌کنیم',verb_seperator= True)
+[' این مثالی است',
+ ' که در آن یک جمله با فعل تمام شده\u200cاست',
+ ' ولی با نقطه تمام نشده\u200cاست',
+ ' به همین دلیل آن را بر اساس فعل جدا می\u200cکنیم']
+
+
+
+>>> tokenizer.word_tokenize('می‌توانید از طریق اینemail با ما در ارتباط باشید: info@hara.ai. همچنین با هشتگ #hara ما را دنبال کنید')
+['می\u200cتوانید',
+ 'از',
+ 'طریق',
+ 'این',
+ 'email',
+ 'با',
+ 'ما',
+ 'در',
+ 'ارتباط',
+ 'باشید',
+ ':',
+ 'info@hara.ai',
+ '.',
+ 'همچنین',
+ 'با',
+ 'هشتگ',
+ 'hara#',
+ 'ما',
+ 'را',
+ 'دنبال',
+ 'کنید']
 
 ```
 
@@ -152,11 +183,13 @@ TEL
 If you use or discuss this normalization tool in your work, please cite our paper :
 
 ```
-@article{oji2021perspeechnorm,
-  title={PerSpeechNorm: A Persian Toolkit for Speech Processing Normalization},
+@inproceedings{oji2021parsinorm,
+  title={ParsiNorm: A Persian Toolkit for Speech Processing Normalization},
   author={Oji, Romina and Razavi, Seyedeh Fatemeh and Dehsorkh, Sajjad Abdi and Hariri, Alireza and Asheri, Hadi and Hosseini, Reshad},
-  journal={arXiv preprint arXiv:2111.03470},
-  year={2021}
+  booktitle={2021 7th International Conference on Signal Processing and Intelligent Systems (ICSPIS)},
+  pages={1--5},
+  year={2021},
+  organization={IEEE}
 }
 ```
 
