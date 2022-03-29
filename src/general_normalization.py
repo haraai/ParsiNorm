@@ -15,8 +15,8 @@ class general_normalization:
 
         self.persian_A = {'ﺁ': 'آ', 'ﺂ': 'آ'}
 
-        self.persian_a = {'ﺍ': 'ا', 'ﺎ': 'ا', 'ٲ': 'ا', 'ٵ': 'ا', 'ﭐ': 'ا', 'ﭑ': 'ا', 'ﺃ': 'ا', 'ﺄ': 'ا', 'ٳ': 'إ',
-                          'ﺇ': 'ا', 'ﺈ': 'ا', 'إ': 'ا', 'أ': 'ا', 'ꙇ': 'ا', 'ٱ': 'ا'}
+        self.persian_a = {'ﺍ': 'ا', 'ﺎ': 'ا', 'ٲ': 'أ', 'ٵ': 'أ', 'ﭐ': 'ا', 'ﭑ': 'ا', 'ﺃ': 'أ', 'ﺄ': 'أ', 'ٳ': 'إ',
+                          'ﺇ': 'إ', 'ﺈ': 'إ', 'إ': 'إ', 'أ': 'أ', 'ꙇ': 'ا', 'ٱ': 'ا'}
 
         self.persian_b = {'ٮ': 'ب', 'ٻ': 'ب', 'ڀ': 'ب', 'ݐ': 'ب', 'ݒ': 'ب', 'ݔ': 'ب', 'ݕ': 'ب', 'ݖ': 'ب', 'ﭒ': 'ب',
                           'ﭓ': 'ب', 'ﭔ': 'ب', 'ﭕ': 'ب', 'ﺏ': 'ب', 'ﺐ': 'ب', 'ﺑ': 'ب', 'ﺒ': 'ب'}
@@ -88,14 +88,14 @@ class general_normalization:
         self.persian_n = {'ڹ': 'ن', 'ں': 'ن', 'ڻ': 'ن', 'ڼ': 'ن', 'ڽ': 'ن', 'ݧ': 'ن', 'ݨ': 'ن', 'ݩ': 'ن', 'ﮞ': 'ن',
                           'ﮟ': 'ن', 'ﮠ': 'ن', 'ﮡ': 'ن', 'ﮢ': 'ن', 'ﮣ': 'ن', 'ﻥ': 'ن', 'ﻦ': 'ن', 'ﻧ': 'ن', 'ﻨ': 'ن'}
 
-        self.persian_v = {'ٶ': 'و', 'ٷ': 'و', 'ﯗ': 'و', 'ﯘ': 'و', 'ﯙ': 'و', 'ﯚ': 'و', 'ﯛ': 'و', 'ﯜ': 'و', 'ﯝ': 'و',
-                          'ﯞ': 'و', 'ﯟ': 'و', 'ﺅ': 'و', 'ﺆ': 'و', 'ۄ': 'و', 'ۅ': 'و', 'ۆ': 'و', 'ۇ': 'و', 'ۈ': 'و',
+        self.persian_v = {'ٶ': 'ؤ', 'ٷ': 'و', 'ﯗ': 'و', 'ﯘ': 'و', 'ﯙ': 'و', 'ﯚ': 'و', 'ﯛ': 'و', 'ﯜ': 'و', 'ﯝ': 'و',
+                          'ﯞ': 'و', 'ﯟ': 'و', 'ﺅ': 'ؤ', 'ﺆ': 'و', 'ۄ': 'و', 'ۅ': 'و', 'ۆ': 'و', 'ۇ': 'و', 'ۈ': 'و',
                           'ۉ': 'و', 'ۊ': 'و', 'ۋ': 'و', 'ۏ': 'و', 'ﯠ': 'و', 'ﯡ': 'و', 'ﯢ': 'و', 'ﯣ': 'و', 'ﻭ': 'و',
-                          'ﻮ': 'و', 'ؤ': 'و', 'פ': 'و'}
+                          'ﻮ': 'و', 'ؤ': 'ؤ', 'פ': 'و'}
 
-        self.persian_h2 = {'ھ': 'ه', 'ۿ': 'ه', 'ۀ': 'ه', 'ہ': 'ه', 'ۂ': 'ه', 'ۃ': 'ه', 'ە': 'ه', 'ﮤ': 'ه', 'ﮥ': 'ه',
-                           'ﮦ': 'ه', 'ﮧ': 'ه', 'ﮨ': 'ه', 'ﮩ': 'ه', 'ﮪ': 'ه', 'ﮫ': 'ه', 'ﮬ': 'ه', 'ﮭ': 'ه', 'ﺓ': 'ه',
-                           'ﺔ': 'ه', 'ﻩ': 'ه', 'ﻪ': 'ه', 'ﻫ': 'ه', 'ﻬ': 'ه'}
+        self.persian_h2 = {'ھ': 'ه', 'ۿ': 'ه', 'ۀ': 'ۀ', 'ہ': 'ه', 'ۂ': 'ۀ', 'ۃ': 'ه', 'ە': 'ه', 'ﮤ': 'ۀ', 'ﮥ': 'ۀ',
+                           'ﮦ': 'ه', 'ﮧ': 'ه', 'ﮨ': 'ه', 'ﮩ': 'ه', 'ﮪ': 'ه', 'ﮫ': 'ه', 'ﮬ': 'ه', 'ﮭ': 'ه', 'ﺓ': 'ة',
+                           'ﺔ': 'ة', 'ﻩ': 'ه', 'ﻪ': 'ه', 'ﻫ': 'ه', 'ﻬ': 'ه'}
 
         self.persian_y = {'ؠ': 'ی', 'ؽ': 'ی', 'ؾ': 'ی', 'ؿ': 'ی', 'ى': 'ی', 'ي': 'ی', 'ٸ': 'ئ', 'ۍ': 'ی', 'ێ': 'ی',
                           'ې': 'ی', 'ۑ': 'ی', 'ے': 'ی', 'ۓ': 'ی', 'ﮮ': 'ی', 'ﮯ': 'ی', 'ﮰ': 'ی', 'ﮱ': 'ی', 'ﯤ': 'ی',
@@ -365,6 +365,8 @@ class general_normalization:
             self.english_alphabet_Z,
         ]
 
+
+
         self.arabic_la = {'ﻵ': 'لا', 'ﻶ': 'لا', 'ﻻ': 'لا', 'ﻼ': 'لا', 'ﻷ': 'لا', 'ﻸ': 'لا', 'ﻹ': 'لا', 'ﻺ': 'لا'}
         self.arabic_sali = {'ﷰ': 'صلی', 'ﷹ': 'صلی'}
         self.arabic_gholi = {'ﷱ': 'قلی'}
@@ -445,9 +447,6 @@ class general_normalization:
         self.number_replaces_nineteen = {'⒆': '۱۹', '⒚': '۱۹', '⑲': '۱۹'}
 
         self.number_replaces_twenty = {'⒇': '۲۰', '⒛': '۲۰', '⑳': '۲۰'}
-
-        self.semi_space = {"\u200b": "", "\u200d": "", "'\u200e": "", "'\u200f": "", "\u2066": "", "\u2067": "",
-                           "\u202a": "", "\u202b": "", "\u202d": ""}
 
         self.number_replaces = [
             self.number_replaces_zero,
@@ -530,6 +529,8 @@ class general_normalization:
             self.punctuation_double_greater,
             self.punctuation_dot,
         ]
+        self.semi_space = {"\u200b": "", "\u200d": "", "'\u200e": "", "'\u200f": "", "\u2066": "", "\u2067": "",
+                           "\u202a": "", "\u202b": "", "\u202d": ""}
 
         self.math_replaces = {
             "½": "۱/۲",
@@ -625,8 +626,10 @@ class general_normalization:
                                u"\u231a"
                                u"\ufe0f"  # dingbats
                                u"\u3030"
+                               u"\u23f1"
+                               u"\u23ea"
                                "]+", re.UNICODE)
-
+        # self.characters_to_remain = "[۰-۹  A-Z a-z آ-ی \u200b \u200c \u200e \u200f \u202a \u202b \u202e \u2066 \u2067 \u206e  \s، . ()!؟:]"
         self.characters_to_remain = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹", "ا", "آ", "أ", "إ", "ب", "پ",
                                      "ت", "ث", "ج", "چ", "ح", "خ", "د", "ذ", "ر", "ز", "ژ", "س", "ش", "ص", "ض", "ط",
                                      "ظ", "ع", "غ", "ف", "ک", "گ", "ق", "ل", "م", "ن", "و", "ه", "ی", "ئ", "ء", "ؤ",
@@ -635,12 +638,25 @@ class general_normalization:
                                      "a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F", "g", "G", "h",
                                      "H", "i", "I", "j", "J", "k", "K", "l", "L", "m", "M", "n", "N", "o", "O", "p",
                                      "P", "q", "Q", "r", "R", "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x",
-                                     "X", "y", "Y", "z", "Z", "\u200c", "\s", "،", ".", "(", ")", "!",
+                                     "X", "y", "Y", "z", "Z", "\u200c", "\u200e", "\s", "،", ".", "(", ")", "!",
                                      "؟", ":", " ", ""]
+
+        self.special_persian_characters_h = {'ۀ': 'ه', 'ة': 'ه'}
+        self.special_persian_characters_hamze = {'أ': 'ا', 'إ': 'ا', 'ؤ': 'و'}
+
+        self.special_persian_characters_replaces = [
+            self.special_persian_characters_h,
+            self.special_persian_characters_hamze
+        ]
 
     def alphabet_correction(self, sentence):
         for persian_alphabet_replace in self.persian_alphabet_replaces:
             sentence = sentence.translate(str.maketrans(persian_alphabet_replace))
+        return sentence
+
+    def special_alphabet_correction(self, sentence):
+        for special_persian_character in self.special_persian_characters_replaces:
+            sentence = sentence.translate(str.maketrans(special_persian_character))
         return sentence
 
     def english_correction(self, sentence):
@@ -656,12 +672,6 @@ class general_normalization:
     def number_correction(self, sentence):
         for number_replace in self.number_replaces:
             sentence = sentence.translate(str.maketrans(number_replace))
-        return sentence
-
-    def semi_space_correction(self, sentence):
-        sentence = re.sub('({})'.format('|'.join(map(re.escape, self.semi_space.keys()))),
-                          lambda m: self.semi_space[m.group()],
-                          sentence)
         return sentence
 
     def punctuation_correction(self, sentence):
@@ -745,3 +755,38 @@ class general_normalization:
                 sentence = sentence.replace(character, " ")
         return sentence
         return ''.join(re.findall(self.characters_to_remain, sentence))
+
+    def twitter_normalization(self, sentence):
+        sentence = re.sub(r'#\w+ ?', '', sentence)
+        sentence = re.sub(r'@\w+ ?', '', sentence)
+        sentence = re.sub(r'http\S+', '', sentence)
+        return sentence
+
+    def semi_space_correction(self, sentence):
+        sentence = re.sub('({})'.format('|'.join(map(re.escape, self.semi_space.keys()))),
+                          lambda m: self.semi_space[m.group()],
+                          sentence)
+        return sentence
+
+    def space_correction(self, sentence):
+        ## This Function is a mixture of HAZM and ParsiVar Features
+        punc_after, punc_before = r'\.:!،؛؟»\]\)\}', r'«\[\(\{'
+        sentence = re.sub(r'^(بی|می|نمی)( )', r'\1‌', sentence)  # verb_prefix
+        sentence = re.sub(r'( )(می|نمی)( )', r'\1\2‌ ', sentence)  # verb_prefix
+        sentence = re.sub(r'([^ ]ه) ی ', r'\1‌ی ', sentence)  # nouns ends with ه when having ی
+        sentence = re.sub(r'( )(هایی|ها|های|ایی|هایم|هایت|هایش|هایمان|هایتان|هایشان|ات|ان|ین' \
+                          r'|انی|بان|ام|ای|یم|ید|اید|اند|بودم|بودی|بود|بودیم|بودید|بودند|ست|تر|تری|ترین|گری|گر)( )',
+                          r'‌\2\3', sentence)
+        complex_word_suffix_pattern = r'( )(طلبان|طلب|گرایی|گرایان|شناس|شناسی|گذاری|گذار|گذاران|شناسان|گیری|پذیری|بندی|آوری|سازی|' \
+                                      r'بندی|کننده|کنندگان|گیری|پرداز|پردازی|پردازان|آمیز|سنجی|ریزی|داری|دهنده|آمیز|پذیری' \
+                                      r'|پذیر|پذیران|گر|ریز|ریزی|رسانی|یاب|یابی|گانه|گانه‌ای|انگاری|گا|بند|رسانی|دهندگان|دار)( )'
+        sentence = re.sub(complex_word_suffix_pattern, r'‌\2\3', sentence)
+        sentence = re.sub(' ([^\n"]+) ', r'\1', sentence)  # remove space before and after quotation
+        sentence = re.sub(' ([' + punc_after + '])', r'\1', sentence)  # remove space before
+        sentence = re.sub('([' + punc_before + ']) ', r'\1', sentence)  # remove space after
+        sentence = re.sub('([' + punc_after[:3] + '])([^ ' + punc_after + '\d۰۱۲۳۴۵۶۷۸۹])', r'\1 \2',
+                          sentence)  # put space after . and :
+        sentence = re.sub('([' + punc_after[3:] + '])([^ ' + punc_after + '])', r'\1 \2', sentence)  # put space after
+        sentence = re.sub('([^ ' + punc_before + '])([' + punc_before + '])', r'\1 \2', sentence)
+        return sentence
+
