@@ -10,7 +10,7 @@ import random
 from general_normalization import general_normalization
 
 
-class special_numbers:
+class Special_numbers:
     def __init__(self):
         self.general_normalization = general_normalization()
 

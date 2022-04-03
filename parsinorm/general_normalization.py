@@ -6,7 +6,7 @@ from itertools import groupby
 from string import punctuation
 
 
-class general_normalization:
+class General_normalization:
 
     def __init__(self):
         self.persian_erab = {'ٰ': '', 'ً': '', 'ٌ': '', 'ٍ': '', 'َ': '', 'ُ': '', 'ِ': '', 'ّ': '', 'ْ': '', 'ٓ': '',

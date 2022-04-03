@@ -4,7 +4,7 @@ from num2fawords import words, HUNDREDS, ordinal_words
 from persian_tools import digits
 
 
-class date_time_to_text:
+class Date_time_to_text:
 
     def __init__(self):
         self.english_digits = '0123456789'

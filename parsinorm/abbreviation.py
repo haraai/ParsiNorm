@@ -2,7 +2,7 @@ import copy
 import re
 
 
-class abbreviation:
+class Abbreviation:
     def __init__(self):
         self.persian_date_type1 = {'ه.ش.': 'هجری شمسی'}
         self.persian_date_type2 = {'ه.ش': 'هجری شمسی'}
