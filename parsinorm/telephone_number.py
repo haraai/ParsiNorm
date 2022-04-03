@@ -4,7 +4,7 @@ from num2fawords import words, HUNDREDS, ordinal_words
 from general_normalization import general_normalization
 
 
-class telephone_number:
+class Telephone_number:
     def __init__(self):
         self.general_normalization = general_normalization()
 

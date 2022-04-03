@@ -4,7 +4,7 @@ import re
 extractor = URLExtract()
 
 
-class mail_url_cleaner:
+class Mail_url_cleaner:
 
     def find_urls_clean(self, sentence):
         urls_start_www = re.findall("www.\s?[\sa-z0-9.-]+[.][\sa-z]{2,4}/?", sentence)
