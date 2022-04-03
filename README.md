@@ -7,7 +7,8 @@ The normalization step is so essential to format unification in pure textual app
 
 <h3> General Normalization</h3>
 
-+ Sentence tokenizer
++ Sentence tokenizer (you must add postagger.model to a folder named resources in where parsinorm is installed for example "/home/yourComputerName/.anaconda3/lib/python3.8/site-packages/parsinorm/resources")
++ Word Tokenizer
 + Normalizing persian and English characters 
 + Normalizing Numbers (Converting to unique perisan Number)
 + Converting Persian, English, Arabic symbols to normalized characters
@@ -32,24 +33,24 @@ The normalization step is so essential to format unification in pure textual app
 <h1>Usage</h1>
 
 ```python
->>> from mail_url_cleaner import mail_url_cleaner
->>> mail_url_cleaner = mail_url_cleaner()
+>>> from parsinorm import Mail_url_cleaner 
+>>> mail_url_cleaner  = Mail_url_cleaner ()
 >>> mail_url_cleaner.find_mails_clean(sentence="info@hara.ai")
 info at hara dot ai
 
 >>> mail_url_cleaner.find_urls_clean(sentence="https://hara.ai/#services")
 https do noghte slash slash hara dot ai
 
->>> from date_time_to_text import date_time_to_text
->>> date_time_to_text = date_time_to_text()
+>>> from parsinorm import Date_time_to_text
+>>> date_time_to_text = Date_time_to_text()
 >>> date_time_to_text.date_to_text(sentence='2021/10/27')
 بیست و هفتم اکتبر سال دو هزار و بیست و یک
 
 >>> date_time_to_text.time_to_text(sentence='22:57:11')
 بیست و دو و پنجاه و هفت دقیقه و  یازده ثانیه
 
->>> from general_normalization import general_normalization
->>> general_normalization = general_normalization()
+>>> from parsinorm import General_normalization
+>>> general_normalization = General_normalization()
 >>> general_normalization.alphabet_correction(sentence='ﻙﯘݙݤﮮ')
 کودکی
 
@@ -89,13 +90,13 @@ TEL
 >>> general_normalization.remove_repeated_punctuation(sentence="!!!!!")
 !
 
->>> from telephone_number import telephone_number
->>> telephone_number = telephone_number()
+>>> from parsinorm import Telephone_number
+>>> telephone_number = Telephone_number()
 >>> telephone_number.find_phones_replace(sentence='تلفن ۰۲۱۳۳۴۵۶۷۸۸')
 تلفن   صفر  بیست و یک سی و سه چهل و پنج شصت و هفت هشتاد و هشت
 
->>> from abbreviation import abbreviation
->>> abbreviation = abbreviation()
+>>> from parsinorm import Abbreviation
+>>> abbreviation = Abbreviation()
 >>> abbreviation.replace_date_abbreviation(sentence=".در سال 1400 ه.ش")
 در سال 1400 هجری شمسی
 
@@ -114,7 +115,7 @@ TEL
 >>> abbreviation.replace_English_abbrevations(sentence='U.S.A')
 یو اس آ
 
->>> from TTS_normalization import TTS_normalization
+>>> from parsinorm import TTS_normalization
 >>> TTS_normalization = TTS_normalization()
 >>> TTS_normalization.math_correction(sentence='⅞')
 هفت هشتم
@@ -125,8 +126,8 @@ TEL
 >>> TTS_normalization.replace_symbols(sentence='۳۳°')
 ۳۳ درجه 
 
->>> from special_numbers import special_numbers
->>> special_numbers = special_numbers()
+>>> from parsinorm import Special_numbers
+>>> special_numbers = Special_numbers()
 >>> special_numbers.convert_numbers_to_text(sentence='122')
  صد و بیست و دو
 
@@ -139,7 +140,7 @@ TEL
 >>>special_numbers.replace_shaba(sentence='IR820540102680020817909002')
  آی آر   هشتاد و دو   صفر  پنج   چهل   ده   بیست و شش   هشتاد   صفر  دو   صفر  هشت   هفده   نود   نود   صفر  دو 
 
->>> from Tokenizer import Tokenizer
+>>> from parsinorm import Tokenizer
 >>> tokenizer = Tokenizer()
 >>> tokenizer.sentence_tokenize('این مثالی است که در آن یک جمله فقط بر اساس علائم نگارشی جدا می‌شود.',verb_seperator= False)
 ['این مثالی است که در آن یک جمله فقط بر اساس علائم نگارشی جدا میشود .']
