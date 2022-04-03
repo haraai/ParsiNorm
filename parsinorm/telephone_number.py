@@ -1,12 +1,12 @@
 import re
 import random
 from num2fawords import words, HUNDREDS, ordinal_words
-from general_normalization import general_normalization
+from .general_normalization import General_normalization
 
 
 class Telephone_number:
     def __init__(self):
-        self.general_normalization = general_normalization()
+        self.general_normalization = General_normalization()
 
 
     def find_phones_replace(self, sentence):

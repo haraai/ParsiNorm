@@ -7,12 +7,12 @@ from persian_tools.bank import card_number
 from persian_tools.bank import sheba
 from persian_tools import national_id
 import random
-from general_normalization import general_normalization
+from .general_normalization import General_normalization
 
 
 class Special_numbers:
     def __init__(self):
-        self.general_normalization = general_normalization()
+        self.general_normalization = General_normalization()
 
     def convert_number_to_letter(self, number):
         if len(number) > 15:

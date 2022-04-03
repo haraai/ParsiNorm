@@ -6,11 +6,10 @@ import string
 
 class Tokenizer:
     def __init__(self):
+        self.dir_path = os.path.dirname(os.path.realpath(__file__)) + "/"
         self.english_characters = list(string.ascii_lowercase) + list(string.ascii_uppercase)
         self.persian_pattern_abbreviation = r"\b[آ-ی](?=([.]))(?:\1[آ-ی])*\b.?"
         self.english_pattern_abbreviation = r"\b[A-Z](?=([.]))(?:\1[A-Z])*\b.?"
-        repo_root = os.path.dirname(__file__) + '/../../'
-        self.tagger = POSTagger(model="resources/postagger.model")
         self.punctuation_pattern = re.compile(r'([؟!\?]+|\d[\d\.:\/\\]+\d|\d+|[:\.،؛»\]\)\}"«\[\(\{])')
         self.mail_pattern = re.compile(r"[A-Za-z0-9\.\-+_]+@[A-Za-z0-9\.\-+_]+\.[a-z]+")
         self.url_pattern = re.compile(
@@ -127,6 +126,7 @@ class Tokenizer:
         self.remove_space_in_dot(sentences)
         sentences = [x for x in sentences if len(x.strip()) > 0]
         if verb_seperator:
+            self.tagger = POSTagger(model=self.dir_path + "/resources/postagger.model")
             for index in range(len(sentences)):
                 sentences_with_verb_seperator = self.verbSeperator(sentences[index])
                 sentences_with_verb_seperator.reverse()
