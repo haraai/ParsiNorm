@@ -106,7 +106,7 @@ class General_normalization:
                           'ﺋ': 'ئ', 'ﺌ': 'ئ', 'ئ': 'ئ'}
 
         self.persian_alphabet_replaces = [
-            # self.persian_erab,
+            self.persian_erab,
             self.keshide,
             self.persian_A,
             self.persian_a,
