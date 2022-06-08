@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
      name='parsinorm',  
-     version='0.0.2',
+     version='0.0.3',
      packages=['parsinorm'] ,
      author="HaraAi",
      author_email="info@hara.ai",
