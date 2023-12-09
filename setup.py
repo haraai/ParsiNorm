@@ -5,8 +5,8 @@ with open("README.md") as fh:
 
 setuptools.setup(
     name="parsinorm",
-    version="0.0.2",
-    packages=["parsinorm"] ,
+    version="0.0.3",
+    packages=["parsinorm"],
     author="HaraAi",
     author_email="info@hara.ai",
     description="Persain Text Pre-Proceesing Tool",
@@ -25,4 +25,4 @@ setuptools.setup(
         "nltk>=3.6.5",
         "hazm>=0.7.0",
     ],
- )
+)
